@@ -15,8 +15,8 @@ public class HelloWorld {
         this("World");
     }
 
-    public String greetMe() {
-        return "Hello " + name + "!";
+    public void sayHello() {
+        System.out.println("Hello " + name + "!");
     }
 
     public static void main(String[] args) {
@@ -28,8 +28,7 @@ public class HelloWorld {
             helloWorld = new HelloWorld();
         }
 
-        System.out.println(helloWorld.greetMe());
+        helloWorld.sayHello();
     }
 
 }
-
