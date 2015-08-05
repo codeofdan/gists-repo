@@ -1,5 +1,7 @@
 # Hello World
 
+Written to support my tutorial/blog post: http://codeofdan.com/2015/08/04/an-object-orientated-look-on-hello-world/
+
 Simple Hello World application using object-orientated principles which will either print a greeting to the user via
 stdout.
 
