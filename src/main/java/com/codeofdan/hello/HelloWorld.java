@@ -1,4 +1,4 @@
-package hello;
+package com.codeofdan.hello;
 
 /**
  * Simple Object-orientated take on Hello World.
