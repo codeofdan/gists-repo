@@ -1,25 +1,24 @@
-# Hello World
+# Gists repo
 
-Written to support my tutorial/blog post: http://codeofdan.com/2015/08/04/an-object-orientated-look-on-hello-world/
+This repository is home to all the source files to gists written in posts for [codeofdan.com](http://codeofdan.com)
 
-Simple Hello World application using object-orientated principles which will either print a greeting to the user via
-stdout.
+Writing code in this repo makes it easier to develop and test in an IDE. Individual files are then uploaded as a separate gist once they are completed. Each "project" should only be one file so they can be easily run and compiled.
 
 ## Usage
 
-From the root directory of the hello-world repository, run the following commands:
+Each class should be compilable by itself, for example to compile the, "Hello World" example you would do the following:
 
     $ cd src/main/java/
-    $ javac hello/HelloWorld.java
+    $ javac com/codeofdan/hello/HelloWorld.java
 
 The source has now been compiled and you can run it as so:
 
-    $ java hello.HelloWorld
+    $ java com.codeofdan.hello.HelloWorld
     Hello World!
 
 An argument can be added to customise the greeting:
 
-    $ java hello.HelloWorld Dan
+    $ java com.codeofdan.hello.HelloWorld Dan
     Hello Dan!
 
 
