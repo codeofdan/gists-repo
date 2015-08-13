@@ -2,7 +2,6 @@ package com.codeofdan.io;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileReader {
@@ -17,16 +16,13 @@ public class FileReader {
         String filepath = args[0];
 
         File inFile = new File(filepath);
-        FileInputStream fis = null;
 
-        try {
+        try (FileInputStream fis = new FileInputStream(inFile)){
 
             if (!inFile.exists()) {
                 System.err.println("File: " + inFile.getAbsolutePath() + ", doesn't exists.");
                 System.exit(2);
             }
-
-            fis = new FileInputStream(inFile);
 
             byte[] bytes = new byte[1024];
             int bytesRead;
@@ -39,17 +35,7 @@ public class FileReader {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e2) {
-                    // give up
-                    e2.printStackTrace();
-                }
-            }
         }
-
 
     }
 }
