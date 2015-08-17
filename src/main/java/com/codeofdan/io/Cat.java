@@ -21,8 +21,6 @@ public class Cat {
             for (String filePath : args) {
                 try (FileInputStream fis = new FileInputStream(filePath)) {
                     readInputStream(fis);
-                } catch (IOException e) {
-                    throw e;
                 }
             }
         } else {
