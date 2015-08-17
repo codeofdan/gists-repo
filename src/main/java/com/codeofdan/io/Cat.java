@@ -5,7 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Implementation of /bin/cat in Java
+ * Implementation of /bin/cat in Java.
+ *
+ * If run with no arguments, will read from stdin and write to stdout.
+ *
+ * If run with arguments, each argument is a filepath whose contents will be written to stdout.
  */
 public class Cat {
 
@@ -15,7 +19,11 @@ public class Cat {
 
         if (args.length != 0) {
             for (String filePath : args) {
-                readInputStream(new FileInputStream(filePath));
+                try (FileInputStream fis = new FileInputStream(filePath)) {
+                    readInputStream(fis);
+                } catch (IOException e) {
+                    throw e;
+                }
             }
         } else {
             readInputStream(System.in);
