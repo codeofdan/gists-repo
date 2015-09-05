@@ -61,6 +61,12 @@ public class ChannelsIntro {
         }).start();
     }
 
+    private void writeInts(DataOutputStream out, int[] array, int offset, int len) throws IOException {
+        for (int i = offset; i < offset + len; i ++) {
+            out.writeInt(array[i]);
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         PipedInputStream pis = new PipedInputStream();
         PipedOutputStream pos = new PipedOutputStream(pis);
@@ -86,12 +92,6 @@ public class ChannelsIntro {
             }
 
             buffer.clear();
-        }
-    }
-
-    private void writeInts(DataOutputStream out, int[] array, int offset, int len) throws IOException {
-        for (int i = offset; i < offset + len; i ++) {
-            out.writeInt(array[i]);
         }
     }
 }
