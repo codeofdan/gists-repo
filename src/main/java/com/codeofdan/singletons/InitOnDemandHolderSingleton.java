@@ -7,11 +7,19 @@ public class InitOnDemandHolderSingleton {
     }
 
     private static class SingletonHolder {
-        private static final InitOnDemandHolderSingleton INSTANCE =
-                new InitOnDemandHolderSingleton();
+        private static InitOnDemandHolderSingleton INSTANCE;
+
+        static {
+            try {
+                INSTANCE = new InitOnDemandHolderSingleton();
+            } catch (Exception e) {
+                INSTANCE = null;
+            }
+        }
     }
 
-    public InitOnDemandHolderSingleton getInstance() {
+    public static InitOnDemandHolderSingleton getInstance() {
         return SingletonHolder.INSTANCE;
     }
+
 }
